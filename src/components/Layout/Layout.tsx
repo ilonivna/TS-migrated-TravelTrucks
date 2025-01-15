@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
 import { Suspense } from "react";
-import Loader from "../Loader/Loader.jsx";
+import Loader from "../Loader/Loader";
 import Navigation from "../Navigation/Navigation.jsx";
 
-export default function Layout({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+
+export default function Layout({ children }: Props) {
   return (
     <div>
       <Navigation />

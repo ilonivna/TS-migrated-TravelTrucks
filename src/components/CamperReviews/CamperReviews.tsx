@@ -3,16 +3,22 @@ import css from "./CamperReviews.module.css";
 import { selectCamper } from "../../redux/campers/selectors";
 import { nanoid } from "nanoid";
 import icons from "../../assets/sprite.svg";
+import { Camper } from "../types/types";
+
+type Review = {
+  reviewer_name: string;
+  reviewer_rating: number;
+  comment: string;
+};
 
 export default function CamperReviews() {
-  const camper = useSelector(selectCamper);
+  const camper: Camper = useSelector(selectCamper);
   const { reviews } = camper;
-  console.log(reviews);
 
   return (
     <div className={css.reviews}>
       <ul className={css.list}>
-        {reviews.map((review) => {
+        {reviews.map((review: Review) => {
           const letter = review.reviewer_name.charAt(0).toUpperCase();
           const stars = 5;
           return (

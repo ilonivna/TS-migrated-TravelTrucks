@@ -1,37 +1,46 @@
 import { Field, Form, Formik } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
-import { selectFilters, selectPrice } from "../../redux/campers/selectors";
-import { clearItems, setFilters, setPrice } from "../../redux/campers/slice";
+import { selectFilters } from "../../redux/campers/selectors";
+import { clearItems, setFilters } from "../../redux/campers/slice";
 import icons from "../../assets/sprite.svg";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import css from "./SideBar.module.css";
 import Button from "../Button/Button";
+import { strict } from "assert";
 
-const LocationSchema = Yup.object().shape({
+const LocationSchema: Yup.Schema = Yup.object().shape({
   location: Yup.string(),
 });
+
+type MyFormValues = {
+  location: string;
+  equipment: string[];
+  form: string[];
+  price: number;
+};
 
 export default function SideBar() {
   const filters = useSelector(selectFilters);
   const dispatch = useDispatch();
   const [value, setValue] = useState(0);
-  const handleInput = (e) => {
-    setValue(e.target.value);
+  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
+    setValue(Number(e.target.value));
+  };
+  const initialValues: MyFormValues = {
+    location: filters.location,
+    equipment: filters.equipment,
+    form: filters.form,
+    price: filters.price,
   };
 
   return (
     <div className={css.container}>
       <Formik
-        initialValues={{
-          location: filters.location,
-          equipment: filters.equipment,
-          form: filters.form,
-          price: filters.price,
-        }}
+        initialValues={initialValues}
         validationSchema={LocationSchema}
         onSubmit={(values) => {
-          dispatch(clearItems());
+          dispatch(clearItems([]));
           dispatch(setFilters(values));
         }}
       >

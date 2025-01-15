@@ -3,16 +3,14 @@ import { Route, Routes } from "react-router-dom";
 import { lazy } from "react";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
-const NotFoundPage = lazy(() =>
-  import("../../pages/NotFoundPage/NotFoundPage")
+const NotFoundPage = lazy(
+  () => import("../../pages/NotFoundPage/NotFoundPage")
 );
 const CatalogPage = lazy(() => import("../../pages/CatalogPage/CatalogPage"));
 const CamperPage = lazy(() => import("../../pages/CamperPage/CamperPage"));
-const Reviews = lazy(() =>
-  import("../../components/CamperReviews/CamperReviews")
-);
-const FeaturesExtended = lazy(() =>
-  import("../../components/FeaturesExtended/FeaturesExtended")
+const Reviews = lazy(() => import("../CamperReviews/CamperReviews"));
+const FeaturesExtended = lazy(
+  () => import("../FeaturesExtended/FeaturesExtended")
 );
 
 export default function App() {

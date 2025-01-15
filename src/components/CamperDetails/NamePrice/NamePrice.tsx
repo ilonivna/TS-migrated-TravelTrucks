@@ -6,8 +6,10 @@ import icons from "../../../assets/sprite.svg";
 import clsx from "clsx";
 import css from "./NamePrice.module.css";
 import { useLocation } from "react-router-dom";
+import { Camper } from "../../types/types";
+import { ChangeEvent } from "react";
 
-export default function NamePrice({ name, price, id }) {
+export default function NamePrice({ name, price, id }: Camper) {
   const dispatch = useDispatch();
   const location = useLocation();
   const isCatalog = location.pathname === "/campers";
@@ -28,7 +30,7 @@ export default function NamePrice({ name, price, id }) {
   const favorites = useSelector(selectFavorites);
   const isFavorite = favorites.includes(id);
 
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const isChecked = e.target.checked;
     if (isChecked) {
       dispatch(setFavorite(id));

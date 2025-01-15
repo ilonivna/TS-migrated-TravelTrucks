@@ -4,7 +4,7 @@ import css from "./Navigation.module.css";
 import logo from "../../assets/TravelTrucks.png";
 import clsx from "clsx";
 
-const getLinkClass = ({ isActive }) => {
+const getLinkClass = ({ isActive }: { isActive: boolean }): string => {
   return clsx(css.link, isActive && css.active);
 };
 

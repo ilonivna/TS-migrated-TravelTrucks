@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import css from "./VehicleDetails.module.css";
 import { selectLoading } from "../../../redux/campers/selectors";
 import Loader from "../../Loader/Loader";
+import { Camper } from "../../types/types";
 
 export default function VehicleDetails({
   form,
@@ -10,7 +11,7 @@ export default function VehicleDetails({
   height,
   tank,
   consumption,
-}) {
+}: Camper) {
   const loading = useSelector(selectLoading);
   return (
     <div className={css.cont}>

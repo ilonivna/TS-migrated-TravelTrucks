@@ -1,15 +1,16 @@
 import icons from "../../../assets/sprite.svg";
+import { Camper } from "../../types/types";
 import css from "./Features.module.css";
 
 export default function Features({
   transmission,
-  ac,
+  AC,
   engine,
   TV,
   kitchen,
   radio,
   bathroom,
-}) {
+}: Camper) {
   return (
     <ul className={css.list}>
       {transmission === "automatic" ? (
@@ -22,7 +23,7 @@ export default function Features({
       ) : (
         <></>
       )}
-      {ac ? (
+      {AC ? (
         <li className={css.iconContainer}>
           <svg height={20} width={20} className={css.iconSvg}>
             <use href={`${icons}#icon-ac`}></use>

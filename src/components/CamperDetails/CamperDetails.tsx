@@ -6,8 +6,13 @@ import NamePrice from "./NamePrice/NamePrice";
 import ReviewLocation from "./ReviewLocation/ReviewLocation";
 import Gallery from "./Gallery/Gallery";
 import Button from "../Button/Button";
+import { Camper } from "../types/types";
 
-export default function CamperDetails({ camper }) {
+type CamperProp = {
+  camper: Camper;
+};
+
+export default function CamperDetails({ camper }: CamperProp) {
   const {
     id,
     transmission,
@@ -42,16 +47,16 @@ export default function CamperDetails({ camper }) {
         <Description description={description} />
         <Features
           transmission={transmission}
-          ac={AC}
+          AC={AC}
           engine={engine}
-          tv={TV}
+          TV={TV}
           kitchen={kitchen}
           radio={radio}
           bathroom={bathroom}
         />
         <div className={css.btn}>
           <Link to={`/campers/${id}/features`}>
-            <Button>Show more</Button>
+            <Button type="button">Show more</Button>
           </Link>
         </div>
       </div>

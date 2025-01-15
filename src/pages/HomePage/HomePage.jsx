@@ -1,4 +1,4 @@
-import Button from "../../components/Button/Button.jsx";
+import Button from "../../components/Button/Button.tsx";
 import css from "./HomePage.module.css";
 import { Link } from "react-router-dom";
 

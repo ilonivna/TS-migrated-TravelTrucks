@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async";
 
-export default function DocumentTitle({ children }) {
+type Props = {
+  children: React.ReactNode;
+};
+export default function DocumentTitle({ children }: Props) {
   return (
     <Helmet>
       <title>{children}</title>

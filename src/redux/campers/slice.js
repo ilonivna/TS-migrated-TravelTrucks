@@ -78,7 +78,7 @@ const campersSlice = createSlice({
       },
     },
     clearItems: {
-      reducer(state, action) {
+      reducer(state) {
         state.items = [];
       },
     },

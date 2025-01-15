@@ -5,7 +5,6 @@ import Button from "../Button/Button";
 import clsx from "clsx";
 import DatePicker from "react-datepicker";
 import iziToast from "izitoast";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 const validationSchema = Yup.object({
@@ -13,7 +12,7 @@ const validationSchema = Yup.object({
     .max(15, "Must be 15 characters or less")
     .min(2, "Must be longer that 2 characters")
     .required("Required"),
-  comment: Yup.string().max(200, "Must be 20 characters or less"),
+  comment: Yup.string().max(200, "Must be 200 characters or less"),
   email: Yup.string().email("Invalid email address").required("Required"),
   date: Yup.date().required(),
 });
@@ -26,7 +25,7 @@ export default function BookingForm() {
           initialValues={{
             name: "",
             email: "",
-            date: "",
+            date: new Date(),
             comment: "",
           }}
           validationSchema={validationSchema}
@@ -92,7 +91,7 @@ export default function BookingForm() {
                 className={css.error}
               />
               <div className={css.btnCont}>
-                <Button>Send</Button>
+                <Button type="submit">Send</Button>
               </div>
             </Form>
           )}
