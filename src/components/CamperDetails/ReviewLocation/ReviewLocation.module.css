@@ -1,0 +1,15 @@
+.reviewLocationContainer {
+    display: flex;
+    gap: 16px;
+}
+.ratingIcon {
+    fill: #FFC531;
+stroke: #646464;
+    stroke-width: 1px;
+    stroke-dasharray: 2, 2;
+    stroke-linejoin: round;
+}
+
+.rating {
+    text-decoration: underline;
+}

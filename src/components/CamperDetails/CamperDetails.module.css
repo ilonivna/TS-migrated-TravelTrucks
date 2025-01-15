@@ -1,0 +1,36 @@
+
+/* HOW TO CHANGE STROKE OF THE ICON WHEN INPUT IS CHECKED */
+/* .label {
+    cursor: pointer;
+    transition: all 250ms ease-in-out;
+}
+
+.label:has(.input:checked) {
+    stroke: red;
+   
+} */
+ .container {
+     display: flex;
+     gap: 24px;
+     min-height: 320px;
+     padding: 24px;
+     min-width: 886px;
+ }
+
+
+
+.containerGallery {
+    width: 292px;
+    height: 320px;
+}
+
+.containerDetails {
+    width: 524px;
+    height: 320px;
+}
+
+.iconSvg {
+    position: absolute;
+    top: 5px;
+}
+

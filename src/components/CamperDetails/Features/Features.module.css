@@ -1,0 +1,18 @@
+.list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 24px;
+}
+
+.iconContainer {
+    display: flex;
+    gap: 8px;
+    border-radius: 100px;
+    height: 48px;
+    background-color: #DADDE1;
+    padding: 12px 18px;
+    text-align: center;
+    align-items: center;
+}

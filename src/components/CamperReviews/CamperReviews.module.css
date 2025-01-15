@@ -1,0 +1,38 @@
+.reviews {
+    
+    width: 630px;
+    height: 588px;
+    border: 1px solid rgba(182, 182, 182, 0.809);
+    border-radius: 20px;
+    padding: 44px 44px;
+
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+border-radius: 50%;
+background-color: rgba(220, 220, 220, 0.432);
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+
+}
+
+
+.nameRatingCont {
+
+}
+
+.itemCont {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}

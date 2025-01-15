@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  padding-left: 64px;
+  padding-right: 64px;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.logo {
+  min-width: 135px;
+  min-height: 15px;
+}
+
+.active {
+  color: rgb(216, 67, 67);
+  filter: drop-shadow(2px 2px 4px #0000007b);
+  -webkit-text-stroke-color: black;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.linkList {
+  display: flex;
+  gap: 32px;
+}

@@ -1,0 +1,31 @@
+
+
+.btn {
+    width: 173px;
+    height: 56px;
+    display: flex;
+    padding: 15px 60px 15px 60px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 200px;
+    background: rgb(228, 72, 72);
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.5%;
+    white-space: nowrap;
+    transition: all 250ms ease-in-out;
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgb(216, 67, 67);
+}
+
+
+.btn:focus,
+.btn:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}

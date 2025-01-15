@@ -1,0 +1,48 @@
+
+.input {
+    width: 527px;
+    height: 60px;
+    border-radius: 12px;
+    background-color: #F7F7F7;
+    padding: 18px 18px;
+    text-align: start;
+    border: none;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.textarea {
+    height: 118px;
+}
+
+.btnCont {
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.error {
+    color: red;
+}
+
+.title {
+color: rgb(16, 24, 40);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.text {
+color: rgb(108, 113, 123);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+    margin-bottom: 24px;
+}

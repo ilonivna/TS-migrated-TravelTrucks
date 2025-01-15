@@ -1,0 +1,9 @@
+.features {
+    background-color: rgba(220, 220, 220, 0.432);
+    min-width: 630px;
+    width: 630px;
+    height: 588px;
+    border: 1px solid rgba(220, 220, 220, 0.279);
+    border-radius: 20px;
+    padding: 44px 44px;
+}

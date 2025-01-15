@@ -1,0 +1,18 @@
+.container {
+height: 312px;
+
+gap: 24px;
+display: flex;
+justify-content: space-between;
+margin-bottom: 30px;
+margin-top: 36px;
+}
+
+
+
+.image {
+        width: 292px;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 10px;
+}

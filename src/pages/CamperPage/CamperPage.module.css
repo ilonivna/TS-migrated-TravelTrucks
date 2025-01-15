@@ -1,0 +1,62 @@
+.container {
+  margin: 0 auto;
+}
+
+
+
+@media screen and (min-width: 320px) {
+  .container {
+    padding: 22px 0;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 44px 44px;
+  }
+}
+
+
+
+
+.nestedCont {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 40px 0px;
+}
+
+.linkCont {
+  display: flex;
+  gap: 36px;
+  margin-left: 36px;
+}
+
+.form {
+  width: 630px;
+  height: 588px;
+  border: 1px solid gainsboro;
+  border-radius: 20px;
+  padding: 44px 44px;
+}
+
+.item {
+  position: relative;
+}
+.active {
+  font-weight: 800;
+}
+
+.active::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 88px;
+  color: black;
+  border-radius: 26px;
+  left: 0%;
+  top: 40px;
+  background-color: rgba(205, 9, 9, 0.731);
+}
