@@ -8,9 +8,10 @@ import css from "./NamePrice.module.css";
 import { useLocation } from "react-router-dom";
 import { Camper } from "../../types/types";
 import { ChangeEvent } from "react";
+import { useAppDispatch } from "../../../redux/store";
 
 export default function NamePrice({ name, price, id }: Camper) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const location = useLocation();
   const isCatalog = location.pathname === "/campers";
   const getIconClass = () => {

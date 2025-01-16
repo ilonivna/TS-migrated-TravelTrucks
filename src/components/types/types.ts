@@ -1,5 +1,5 @@
 export type Camper = {
-  id?: string;
+  id?: string | undefined;
   name?: string;
   price?: number;
   rating?: number;

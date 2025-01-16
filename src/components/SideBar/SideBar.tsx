@@ -17,7 +17,7 @@ type MyFormValues = {
   location: string;
   equipment: string[];
   form: string[];
-  price: number;
+  price: string;
 };
 
 export default function SideBar() {
@@ -40,7 +40,7 @@ export default function SideBar() {
         initialValues={initialValues}
         validationSchema={LocationSchema}
         onSubmit={(values) => {
-          dispatch(clearItems([]));
+          dispatch(clearItems());
           dispatch(setFilters(values));
         }}
       >

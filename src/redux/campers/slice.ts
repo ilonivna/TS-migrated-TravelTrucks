@@ -12,7 +12,7 @@ type Filters = {
 type CampersState = {
   items: Camper[];
   item: Camper | null;
-  favorites: string[];
+  favorites: string[] | undefined;
   loading: boolean;
   error: string | null;
   totalItems: number | null;
@@ -53,36 +53,50 @@ const campersSlice = createSlice({
   name: "campers",
   initialState,
   reducers: {
-    setFavorite(state, action: PayloadAction<string>) {
-      state.favorites.push(action.payload);
+    setFavorite(
+      state: CampersState,
+      action: PayloadAction<string | undefined>
+    ) {
+      if (action.payload === undefined) {
+        return;
+      }
+      if (state.favorites !== undefined) {
+        state.favorites.push(action.payload);
+      }
     },
-    deleteFavorite(state, action: PayloadAction<string>) {
-      state.favorites = state.favorites.filter(
-        (item) => item !== action.payload
-      );
+    deleteFavorite(
+      state: CampersState,
+      action: PayloadAction<string | undefined>
+    ) {
+      if (state.favorites) {
+        state.favorites = state.favorites.filter(
+          (item) => item !== action.payload
+        );
+      }
     },
-    clearFilters(state) {
+
+    clearFilters(state: CampersState) {
       state.filters = { location: "", equipment: [], form: [], price: "" };
     },
-    setFilters(state, action: PayloadAction<Filters>) {
+    setFilters(state: CampersState, action: PayloadAction<Filters>) {
       state.filters = action.payload;
     },
-    setPage(state, action: PayloadAction<number>) {
+    setPage(state: CampersState, action: PayloadAction<number>) {
       state.page = action.payload;
     },
-    setTotal(state, action: PayloadAction<number>) {
+    setTotal(state: CampersState, action: PayloadAction<number>) {
       state.totalItems = action.payload;
     },
-    setError(state, action: PayloadAction<string | null>) {
+    setError(state: CampersState, action: PayloadAction<string | null>) {
       state.error = action.payload;
     },
-    setLoading(state, action: PayloadAction<boolean>) {
+    setLoading(state: CampersState, action: PayloadAction<boolean>) {
       state.loading = action.payload;
     },
-    setPrice(state, action: PayloadAction<string>) {
+    setPrice(state: CampersState, action: PayloadAction<string>) {
       state.filters.price = action.payload;
     },
-    clearItems(state) {
+    clearItems(state: CampersState) {
       state.items = [];
     },
   },
