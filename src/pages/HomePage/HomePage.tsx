@@ -1,4 +1,4 @@
-import Button from "../../components/Button/Button.tsx";
+import Button from "../../components/Button/Button.js";
 import css from "./HomePage.module.css";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function HomePage() {
       </div>
       <div>
         <Link to="/campers">
-          <Button>View Now</Button>
+          <Button type="button">View Now</Button>
         </Link>
       </div>
     </div>

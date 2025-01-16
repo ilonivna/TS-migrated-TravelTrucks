@@ -14,9 +14,10 @@ import { setPage } from "../../redux/campers/slice";
 import { useEffect } from "react";
 import css from "./CatalogPage.module.css";
 import DocumentTitle from "../../components/DocumentTitle/DocumentTitle";
+import { useAppDispatch } from "../../redux/store";
 
 export default function CatalogPage() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const campersList = useSelector(selectCampersList);
   const loading = useSelector(selectLoading);
   const filters = useSelector(selectFilters);
