@@ -7,7 +7,6 @@ import icons from "../../assets/sprite.svg";
 import { ChangeEvent, useState } from "react";
 import css from "./SideBar.module.css";
 import Button from "../Button/Button";
-import { strict } from "assert";
 
 const LocationSchema: Yup.Schema = Yup.object().shape({
   location: Yup.string(),

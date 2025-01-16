@@ -5,22 +5,27 @@ import { nanoid } from "nanoid";
 import icons from "../../assets/sprite.svg";
 import { Camper } from "../types/types";
 
-type Review = {
-  reviewer_name: string;
-  reviewer_rating: number;
-  comment: string;
+type ReviewsType = {
+  reviewer_name?: string | undefined;
+  reviewer_rating?: number | undefined;
+  comment?: string | undefined;
 };
 
 export default function CamperReviews() {
   const camper: Camper = useSelector(selectCamper);
   const { reviews } = camper;
-
+  if (!reviews) return null;
   return (
     <div className={css.reviews}>
       <ul className={css.list}>
-        {reviews.map((review: Review) => {
+        {reviews.map((review: ReviewsType) => {
+          if (!review.reviewer_name || review.reviewer_rating === undefined) {
+            return null;
+          }
+
           const letter = review.reviewer_name.charAt(0).toUpperCase();
           const stars = 5;
+          const rating = review.reviewer_rating ?? 0;
           return (
             <li key={review.reviewer_name}>
               <div className={css.itemCont}>
@@ -33,9 +38,7 @@ export default function CamperReviews() {
                       <svg
                         width={16}
                         height={16}
-                        fill={
-                          index < review.reviewer_rating ? "#ffc531" : "#f2f4f7"
-                        }
+                        fill={index < rating ? "#ffc531" : "#f2f4f7"}
                         key={nanoid()}
                       >
                         <use href={`${icons}#icon-rating`}></use>
